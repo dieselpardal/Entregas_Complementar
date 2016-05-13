@@ -1,6 +1,7 @@
 function gerarGrafico() {
     init();
     clearScreen();
+
     var client = [
             {
                 "name": "Ivan",
@@ -40,5 +41,17 @@ function gerarGrafico() {
                   "cento":90
             }
         ];
+    createGraph(client,join);
+};
+function aaa(entry) {
+    console.log(entry.name);
+}
+function gerarGraficoJson(client, join) {
+    console.log(client.length+" clientes e "+join.length+" joins.");
+    for(var i=0; i<client.length;i++) {
+         console.log("AAA:"+client[i].name);
+        }
+    init();
+    clearScreen();
     createGraph(client,join);
 };

@@ -3,12 +3,7 @@ var svg;
 var width = 500;
 var height = 500;
 
-function circle(x,y,color,client,join,name,ray) {
-//  var cento = 150;
-//  var currnode = join.filter(function(x) { return (x.origin.name == name); } );
-//  if (currnode && currnode.length > 0)
-//    cento = currnode[0].cento;
-
+function circle(f,x,y,color,client,join,name,ray) {
   svg.append('circle')
       .attr('class', 'origin')
       .attr('cx',x)
@@ -17,7 +12,7 @@ function circle(x,y,color,client,join,name,ray) {
       .attr('fill',color)
       .style('opacity', 0.3)
       .on("mouseover", function (d) {
-                                      indicate(client,join,name);
+                                      indicate(client,join,f);
                                     });
 }
 function pictures(x,y,width,height, name) {
@@ -54,19 +49,19 @@ function mean(origin,destiny) {
  return (origin + destiny) /2;
 }
 
-function indicate(client,join,name) {
+function indicate(client,join,f) {
  clearScreen();
  pictures(0,90,width,height+10, "a");
  createGraph(client,join);
 
     for(var g=0; g<join.length; g++) {
-            if (name == join[g].origin.name) {
-             line(join[g].origin.x,join[g].origin.y,
-                  join[g].destiny.x,join[g].destiny.y,
+            if (f == join[g].origin) {
+             line(client[join[g].origin].x,client[join[g].origin].y,
+                  client[join[g].destiny].x,client[join[g].destiny].y,
                   'red' );
-             print(join[g].cento+"%",
-                   mean(join[g].origin.x, join[g].destiny.x),
-                   mean(join[g].origin.y, join[g].destiny.y),
+             print(join[g].ratio+"%",
+                   mean(client[join[g].origin].x, client[join[g].destiny].x),
+                   mean(client[join[g].origin].y, client[join[g].destiny].y),
                    10,
                    'arial',
                    12,
@@ -74,7 +69,6 @@ function indicate(client,join,name) {
             }
         }
 }
-
 function line(x1,y1,x2,y2,color) {
   svg.append('line')
       .attr('class', 'arrow')
@@ -90,7 +84,7 @@ function createGraph(client,join) {
 pictures(0,90,width,height+10, "a");
     for(var f=0; f<client.length;f++)
             {
-                    circle(client[f].x,client[f].y,'black',client,join,client[f].name,client[f].qtd/10);
+                    circle(f,client[f].x,client[f].y,'black',client,join,client[f].name,client[f].qtd/10);
                     print(client[f].name,client[f].x,client[f].y, 10,'arial',12,'black');
                     print(client[f].qtd,client[f].x,client[f].y+20, 10,'arial',12,'black');
             }

@@ -1,16 +1,41 @@
-<html>
+
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
     <title>Entregas</title>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="js/d3.min.js"></script>
     <script src="js/service.js"></script>
     <script src="js/entregas.js"></script>
+
 </head>
 <body >
 <div class="Entregas">
-    <h1 data-th-text="${message}">Entregas 1.0 por Ivan</h1>
+
+    <p>MAPA DOS CLIENTES e JOINS</p>
 </div>
 <div id="quadros"></div>
-<script> gerarGrafico(); </script>
+<h1> CLIENTES:</h1>
+<div th:each="map : ${mapListClient}">
+    <p th:text="'Nome:'+${map.name}+'  x:'+${map.x}+'  y:'+${map.y}+'  qtd:'+${map.qtd}"></p>
+</div>
+<h1> JOIN:</h1>
+<div th:each="map : ${mapListJoin}">
+    <p th:text="'Origem:'+${map.origin}+'  Destino:'+${map.destiny}+'  Porcentagem:'+${map.cento}"></p>
+</div>
+<script> var client = []; var join = []; </script>
+<div th:each="map : ${mapListClient}">
+<script th:inline="javascript">
+client.push({ name:[[${map.name}]], x:[[${map.x}]], y:[[${map.y}]], qtd:[[${map.qtd}]]});
+</script>
+</div>
+<div th:each="map : ${mapListJoin}">
+    <script th:inline="javascript">
+join.push({ origin:[[${map.origin}]], destiny:[[${map.destiny}]], cento:[[${map.cento}]]});
+</script>
+</div>
+    <script>
+     gerarGraficoJson(client,join);
+    </script>
+
 </body>
 </html>
