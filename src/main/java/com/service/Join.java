@@ -8,7 +8,7 @@ public class Join {
     public int ratio;
 
     public Join(int id, int originIdClient, int destinyIdClient, int ratio) {
-        this.id=id;
+        this.id = id;
         this.originIdClient = originIdClient;
         this.destinyIdClient = destinyIdClient;
         this.ratio = ratio;

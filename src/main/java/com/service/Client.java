@@ -9,7 +9,8 @@ public class Client {
     public int qtd;
 
 
-    public Client(String name, int x, int y, int qtd) {
+    public Client(int id, String name, int x, int y, int qtd) {
+        this.id = id;
         this.name = name;
         this.x = x;
         this.y = y;

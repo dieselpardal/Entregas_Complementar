@@ -9,6 +9,12 @@ Data: 03/05/2016
 
 O ambiente de projeto de Entregas Complementar 1.0 na ambiente OSX com visualização de biblioteca D3.
 
+Funcionalidade:
+    1) Para novo cliente: clicar o mouse na area de Brasil e escrever nome e quantidade.
+    2) Para junta dos clientes: arrastar o mouse de origem de Cliente até destino de cliente, e escrever o porcentagem.
+    3) Para remover um dos clientes: clicar um botão direita do mouse.
+    4) Para remover junta dos clientes: clicar um botão esquerda na linha de junta dos clientes. 
+    
 Requerimento:
     Plataforma: IntelliJ IDEA
     Instalacao de gradle

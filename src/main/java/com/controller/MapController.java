@@ -1,4 +1,5 @@
 package com.controller;
+
 import com.service.MapLoader;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
@@ -13,7 +14,7 @@ import java.util.Map;
 @EnableAutoConfiguration
 public class MapController {
 
-    @RequestMapping(value = "/map",method=RequestMethod.GET)
+    @RequestMapping(value = "/map", method = RequestMethod.GET)
     public String indicate(Map<String, Object> model) {
         List<Object> client, join;
         MapLoader map = new MapLoader();
@@ -24,7 +25,7 @@ public class MapController {
         return "indicate";
     }
 
-    @RequestMapping(value = "/map2",method=RequestMethod.GET)
+    @RequestMapping(value = "/map2", method = RequestMethod.GET)
     public ModelAndView indicateView() {
         List<Object> client, join;
         MapLoader map = new MapLoader();
@@ -42,6 +43,6 @@ public class MapController {
     OK Colocar as packages "controller" e "views" (refactoring)
     OK Mudar o nome das classes para maíusculo e inglês
     OK Fazer a action retornar a View e o Model
-    - Adicionar novos clientes no mapa
+    OK Adicionar novos clientes no mapa
     - TDD
  */

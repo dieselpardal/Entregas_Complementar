@@ -11,6 +11,7 @@ public class Application {
         m.hello();
         SpringApplication.run(Application.class, args);
     }
+
     private void hello() {
         System.out.println("Inicio na web!!");
     }

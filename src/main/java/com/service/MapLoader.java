@@ -27,8 +27,7 @@ public class MapLoader {
         JSONParser parser = new JSONParser();
         try {
             return (JSONObject) parser.parse(new FileReader("src/main/java/com/service/map.json"));
-        }
-        catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
@@ -45,45 +44,14 @@ public class MapLoader {
     }
 
     private List<Object> openGsonClient(JSONObject jsonObj) {
-        return openGsonObject(jsonObj, new TypeToken<ArrayList<Client>>() {}.getType(), "client");
+        return openGsonObject(jsonObj, new TypeToken<ArrayList<Client>>() {
+        }.getType(), "client");
     }
 
     private List<Object> openGsonJoin(JSONObject jsonObj) {
-        return openGsonObject(jsonObj, new TypeToken<ArrayList<Join>>() {}.getType(), "join");
+        return openGsonObject(jsonObj, new TypeToken<ArrayList<Join>>() {
+        }.getType(), "join");
     }
 
-//    private List<Client> openJsonClient(JSONObject jsonObj) {
-//        List<Client> client = new ArrayList<>();
-//        JSONArray temp = (JSONArray) jsonObj.get("client");
-//        Iterator<JSONObject> iterator = temp.iterator();
-//        while (iterator.hasNext()) {
-//            JSONObject jsonOne = iterator.next();
-//            client.add(new Client((String) jsonOne.get("name"),
-//                    Integer.valueOf((String) jsonOne.get("x")),
-//                    Integer.valueOf((String) jsonOne.get("y")),
-//                    Integer.valueOf((String) jsonOne.get("qtd"))));
-//        }
-//        return client;
-//    }
-//
-//    private List<Join> openJsonJoin(JSONObject jsonObj, List<Client> client) {
-//        List<Join> join = new ArrayList<>();
-//        JSONArray temp = (JSONArray) jsonObj.get("join");
-//        Iterator<JSONObject> iterator = temp.iterator();
-//        while (iterator.hasNext()) {
-//            JSONObject jsonOne = iterator.next();
-//            int origin = findWay(client, jsonOne, "origin");
-//            int destiny = findWay(client, jsonOne, "destiny");
-//            join.add(new Join(Integer.valueOf((String) jsonOne.get("id")),origin, destiny, Integer.valueOf((String) jsonOne.get("ratio"))));
-//        }
-//        return join;
-//    }
-//
-//    private int findWay(List<Client> client, JSONObject jsonOne, String way) {
-//        int i=0;
-//        while(i<client.size() && !jsonOne.get(way).equals(client.get(i).name)) {
-//            i++;
-//        }
-//        return i;
-//    }
+
 }
