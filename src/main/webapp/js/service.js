@@ -24,7 +24,6 @@ function circle(idCLient,x,y,color,name,ray) {
       .attr('r', ray)
       .attr('fill',color)
       .style('opacity', 0.3)
-
       .on("mouseover", function (d) {
                                       numClient = idCLient;
                                       indicate(idCLient);
@@ -34,7 +33,15 @@ function circle(idCLient,x,y,color,name,ray) {
                                     })
       .call(draghandle)
 }
+function reta (x,y,width,height,color) {
+svg.append("rect")
+        .attr("x", x)
+        .attr("y", y)
+        .attr("width", width)
+        .attr("height", height)
+        .attr('fill',color);
 
+}
 function pictures(x,y,width,height, name) {
   svg.append('svg:image')
     .attr('x', 0)
@@ -55,6 +62,7 @@ function clearScreen() {
 }
 
 function print(text,x,y,width,fontFamily,fontSize,color) {
+  reta (x,y-10,7* text.length,12,"white");
   svg.append('text')
     .attr('x', x)
     .attr('y', y)
@@ -69,27 +77,24 @@ function print(text,x,y,width,fontFamily,fontSize,color) {
 function mean(origin,destiny) {
  return (origin + destiny) /2;
 }
+function posSearch(idCLient) {
+var idSearch=0;
+while (idSearch<clients.length && clients[idSearch].id != idCLient) idSearch++;
+  return idSearch;
+}
 
-function indicate(idCLientOrigin) {
-  clearScreen();
-  createGraph();
-  withOutCircle =0;
-  //console.log("withOutCircle="+withOutCircle);
+function onJoin(idCLientOrigin) {
   var idCLientOriginPos =0;
   var idCLientDestinyPos =0;
-  g=0;
-  while (g<clients.length && clients[g].id != idCLientOrigin) g++;
-  idCLientOriginPos = g;
-  for(var f=0; f<joins.length; f++) {
-    if (idCLientOrigin === joins[f].origin) {
-        idCLientDestiny = joins[f].destiny;
-        h=0;
-        while(h<clients.length && clients[h].id != idCLientDestiny) h++;
-        idCLientDestinyPos = h;
-        line(g,clients[idCLientOriginPos].x,clients[idCLientOriginPos].y,
+  var idCLientOriginPos = posSearch(idCLientOrigin);
+  for(var idSearchJoin=0; idSearchJoin<joins.length; idSearchJoin++) {
+    if (idCLientOrigin === joins[idSearchJoin].origin) {
+        idCLientDestiny = joins[idSearchJoin].destiny;
+        var idCLientDestinyPos = posSearch(idCLientDestiny);
+        line(idCLientOriginPos,clients[idCLientOriginPos].x,clients[idCLientOriginPos].y,
                clients[idCLientDestinyPos].x,clients[idCLientDestinyPos].y,
                 'orange' );
-        print(joins[f].ratio+"%",
+        print(joins[idSearchJoin].ratio+"%",
            mean(clients[idCLientOriginPos].x, clients[idCLientDestinyPos].x),
            mean(clients[idCLientOriginPos].y, clients[idCLientDestinyPos].y),
            10,
@@ -97,7 +102,14 @@ function indicate(idCLientOrigin) {
            12,
            'blue');
     }
-   }
+  }
+}
+function indicate(idCLientOrigin) {
+  clearScreen();
+  createGraph();
+  withOutCircle =0;
+  onJoin(idCLientOrigin);
+
 }
 function line(f,x1,y1,x2,y2,color) {
   svg.append('line')
@@ -114,11 +126,11 @@ function line(f,x1,y1,x2,y2,color) {
                 joins.splice(f,1);
                 createGraph();
                 updateHTML();
-                 console.log("REMOVE JOIN!");
+                console.log("REMOVE JOIN!");
                 }
             })
       .on("mouseout", function(d){
-           if(ativeDrag ===0) withOutCircle =1;
+            if(ativeDrag === 0) withOutCircle =1;
             });
 }
 
@@ -139,7 +151,6 @@ function init(client, join) {
      .attr('width', width)
      .attr('height', height)
      .on("click", function(d){
-     //console.log("withOutCircle="+withOutCircle);
             if( withOutCircle === 1) {
             var coordinates = d3.mouse(this);
             posOriginX = coordinates[0];
@@ -165,7 +176,7 @@ function dragMove(d){
   posDestinyX = coordinates[0];
   posDestinyY = coordinates[1];
   if ( connect ===1 ) {
-    line(null,posOriginX+1,posOriginY+1,posDestinyX+1,posDestinyY+1, 'green' );
+    line(null,posOriginX+1,posOriginY+1,posDestinyX+1,posDestinyY+1, "green" );
     }
 }
 
@@ -189,19 +200,18 @@ function dragEnd(d) {
   if(posOriginX === posDestinyX && posOriginY === posDestinyY){
     if (confirm("Confirm remove client?"+numClient) == true) {
       clients.splice(numClient,1);
-      for(f=0; f<joins.length;f++)console.log("AJOIN:"+joins[f].origin+"-"+joins[f].destiny);
-      f=0;
-      while ( f < joins.length )
+      var pos=0;
+      while ( pos < joins.length )
       {
-      if(joins[f].origin=== numClient || joins[f].destiny=== numClient ) {
-        joins.splice(f,1);
-        f =0;
+      if(joins[pos].origin=== numClient || joins[pos].destiny=== numClient ) {
+        joins.splice(pos,1);
+        pos =0;
         } else {
-                 f++;
+                 pos++;
                 }
       }
      updateHTML();
-      console.log("REMOVE CLIENT!"+numClient);
+     console.log("REMOVE CLIENT!"+numClient);
   }
 
   }

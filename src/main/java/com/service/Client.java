@@ -8,7 +8,6 @@ public class Client {
     public int y;
     public int qtd;
 
-
     public Client(int id, String name, int x, int y, int qtd) {
         this.id = id;
         this.name = name;
