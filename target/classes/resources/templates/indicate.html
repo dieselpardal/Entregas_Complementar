@@ -1,0 +1,56 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Entregas</title>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="js/d3.min.js"></script>
+    <script src="js/service.js"></script>
+    <script src="js/entregas.js"></script>
+    <style>
+#quadros {
+    line-height:30px;
+    background-color:#eeeeee;
+    height:500px;
+    width:500px;
+    float:left;
+    padding:5px;
+    }
+
+#section {
+    width:550px;
+    float:left;
+    padding:10px;
+    }
+    </style>
+</head>
+<body>
+
+
+<div id="quadros"></div>
+<div id="section">
+<p>MAPA DOS CLIENTES</p>
+<h3> CLIENTES:</h3>
+
+<div id="client"></div>
+<h3> JOIN:</h3>
+
+<div id="join"></div>
+<script> var client = []; var join = []; </script>
+<div th:each="map : ${mapListClient}">
+    <script th:inline="javascript">
+client.push({ id:[[${map.id}]], name:[[${map.name}]], x:[[${map.x}]], y:[[${map.y}]], qtd:[[${map.qtd}]]});
+
+    </script>
+</div>
+<div th:each="map : ${mapListJoin}">
+    <script th:inline="javascript">
+join.push({ id:[[${map.id}]], origin:[[${map.originIdClient}]], destiny:[[${map.destinyIdClient}]], ratio:[[${map.ratio}]]});
+
+    </script>
+</div>
+<script>
+     gerarGraficoJson(client,join);
+
+</script>
+    </div>
+</body>
+</html>

@@ -242,11 +242,15 @@ function newJsonJoin(origin, destiny, ratio) {
 
 function updateHTML() {
 var s="";
-for(f=0; f<clients.length;f++) s = s + "Id:"+clients[f].id+" Nome:"+clients[f].name+" x:"+clients[f].x+" y:"+clients[f].y+" qtd:"+clients[f].qtd+"<br>";
+for(f=0; f<clients.length;f++) s = s + "Id Client:"+clients[f].id+tab()+"Nome:"+clients[f].name+tab()+"x:"+clients[f].x+tab()+"y:"+clients[f].y+tab()+"qtd:"+clients[f].qtd+"<br>";
   document.getElementById("client").innerHTML = s;
 
   s="";
-for(f=0; f<joins.length;f++) s = s + "Id:"+joins[f].id+" Origem:"+joins[f].origin+" Destino:"+joins[f].destiny+" Porcentagem:"+joins[f].ratio+" <br>";
+for(f=0; f<joins.length;f++) s = s + "Id Join:"+joins[f].id+tab()+"Origem:"+joins[f].origin+tab()+"Destino:"+joins[f].destiny+tab()+"Porcentagem:"+joins[f].ratio+" <br>";
 document.getElementById("join").innerHTML = s;
 
+}
+function tab() {
+
+return "&nbsp;&nbsp;&nbsp;&nbsp;";
 }

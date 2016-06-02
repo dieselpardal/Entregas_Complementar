@@ -23,7 +23,7 @@ public class MapLoader {
         return openGsonJoin(loadJson());
     }
 
-    protected JSONObject loadJson() {
+    public JSONObject loadJson() {
         JSONParser parser = new JSONParser();
         try {
             return (JSONObject) parser.parse(new FileReader("src/main/java/com/service/map.json"));
@@ -52,6 +52,4 @@ public class MapLoader {
         return openGsonObject(jsonObj, new TypeToken<ArrayList<Join>>() {
         }.getType(), "join");
     }
-
-
 }

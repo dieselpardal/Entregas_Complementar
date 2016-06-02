@@ -17,7 +17,7 @@ Funcionalidade:
     
 Requerimento:
     Plataforma: IntelliJ IDEA
-    Instalacao de gradle
+    Instalação de gradle
 
 Os pacotes mencionados do documento podem ser encontrados na mesma pasta deste arquivo.
 
@@ -29,3 +29,38 @@ Para executa no site de Servidor de Local:
     
     b) No navegador: 
         http://localhost:8090/
+
+
+-------------------
+Feito:
+        
+    OK Utilizar o bibliotecas GSON pra converter codigo Json -> Java
+    OK Colocar as packages "controller" e "views" (refactoring)
+    OK Mudar o nome das classes para maíusculo e inglês
+    OK Fazer a action retornar a View e o Model
+    OK Adicionar novos clientes no mapa
+    OK - TDD
+
+        
+Atual:
+    1. Usar o selenium pra criar um teste da interface do site - Fazer junto!
+    * 2. Como debugar aplicacoes usando o SpringBoot? - Ivan
+        
+    3. como acesso no site em produção? Como gerar o jar? - Gustavo, dps Ivan
+    4. Colocar o teu site no https://www.heroku.com/? (PaaS - Platform as a Service - serve pra nos dar Hardware e Software sob demanda) - - Gustavo, dps Ivan 
+    4.1 concorrencias:
+        https://www.heroku.com/
+        https://azure.microsoft.com
+        https://www.cloudfoundry.org/
+        https://www.openshift.com
+
+    
+Próximo exercício:
+
+    1. OK Estudar o Typescript pra simplificar nosso Javascript
+    2. OK Os dados estão na memória do Javascript, seria legal que estivessem no Java
+    
+Algumas Dicas:
+    GOOGLE MAPS - http://www.w3schools.com/
+    CREATE JAR - http://www.mkyong.com/gradle/gradle-create-a-jar-file-with-dependencies/
+    MODIFICAR MAPS - http://www.w3schools.com/googleapi/tryit.asp?filename=tryhtml_map_overlays_circle

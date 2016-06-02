@@ -37,12 +37,3 @@ public class MapController {
         return modelAndView;
     }
 }
-
-/*
-    OK Utilizar o bibliotecas GSON pra converter codigo Json -> Java
-    OK Colocar as packages "controller" e "views" (refactoring)
-    OK Mudar o nome das classes para maíusculo e inglês
-    OK Fazer a action retornar a View e o Model
-    OK Adicionar novos clientes no mapa
-    - TDD
- */

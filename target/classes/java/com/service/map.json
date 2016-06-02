@@ -1,0 +1,45 @@
+{
+  "client": [
+    {
+      "id": "0",
+      "name": "Ivan",
+      "x": "270",
+      "y": "450",
+      "qtd": "50"
+    },
+    {
+      "id": "1",
+      "name": "Clara",
+      "x": "110",
+      "y": "130",
+      "qtd": "100"
+    },
+    {
+      "id": "2",
+      "name": "Gustavo",
+      "x": "380",
+      "y": "320",
+      "qtd": "150"
+    }
+  ],
+  "join": [
+    {
+      "id": "0",
+      "originIdClient": "0",
+      "destinyIdClient": "1",
+      "ratio": "50"
+    },
+    {
+      "id": "1",
+      "originIdClient": "1",
+      "destinyIdClient": "2",
+      "ratio": "40"
+    },
+    {
+      "id": "2",
+      "originIdClient": "0",
+      "destinyIdClient": "2",
+      "ratio": "190"
+    }
+  ]
+}
