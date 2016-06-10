@@ -30,6 +30,16 @@ Para executa no site de Servidor de Local:
     b) No navegador: 
         http://localhost:8090/
 
+Para converter de codigo-fonte de JAVA em JAR na Terminal:
+
+  1) colocar no arquivo Procfile ( cria se nao existesse)
+      web java -Dserver.port=$PORT $JAVA_OPTS -jar build/libs/entregas-0.1.0.jar
+  2) ./gradlew jar
+  3) adiciona no arquivo build.gradle:
+     task stage {
+         dependsOn build
+     }
+  4) ./gradlew stage 
 
 -------------------
 Feito:
@@ -46,8 +56,8 @@ Atual:
     1. Usar o selenium pra criar um teste da interface do site - Fazer junto!
     * 2. Como debugar aplicacoes usando o SpringBoot? - Ivan
         
-    3. como acesso no site em produção? Como gerar o jar? - Gustavo, dps Ivan
-    4. Colocar o teu site no https://www.heroku.com/? (PaaS - Platform as a Service - serve pra nos dar Hardware e Software sob demanda) - - Gustavo, dps Ivan 
+    3. OK como acesso no site em produção? Como gerar o jar? - Gustavo, dps Ivan
+    4. OK Colocar o teu site no https://www.heroku.com/? (PaaS - Platform as a Service - serve pra nos dar Hardware e Software sob demanda) - - Gustavo, dps Ivan 
     4.1 concorrencias:
         https://www.heroku.com/
         https://azure.microsoft.com
@@ -59,6 +69,8 @@ Próximo exercício:
 
     1. OK Estudar o Typescript pra simplificar nosso Javascript
     2. OK Os dados estão na memória do Javascript, seria legal que estivessem no Java
+    3. Aperfeiçoar JQUERY para html e JS
+     
     
 Algumas Dicas:
     GOOGLE MAPS - http://www.w3schools.com/

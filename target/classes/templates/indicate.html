@@ -1,16 +1,22 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Entregas</title>
+
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="js/markerWithLabel.js"></script>
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="js/d3.min.js"></script>
     <script src="js/service.js"></script>
+    <script src="js/serviceD3.js"></script>
+    <script src="js/serviceMap.js"></script>
     <script src="js/entregas.js"></script>
+
     <style>
 #quadros {
     line-height:30px;
     background-color:#eeeeee;
     height:500px;
-    width:500px;
+    width:1000px;
     float:left;
     padding:5px;
     }
@@ -20,7 +26,15 @@
     float:left;
     padding:10px;
     }
-    </style>
+
+
+        .labels {
+        font-size: 10px;
+        font-weight: bold;
+        text-align: center;
+        width: 40px;
+        }
+        </style>
 </head>
 <body>
 
@@ -28,7 +42,7 @@
 <div id="quadros"></div>
 <div id="section">
 <p>MAPA DOS CLIENTES</p>
-<h3> CLIENTES:</h3>
+<h3> CLIENTE:</h3>
 
 <div id="client"></div>
 <h3> JOIN:</h3>

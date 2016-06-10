@@ -4,11 +4,11 @@ public class Client {
 
     public int id;
     public String name;
-    public int x;
-    public int y;
-    public int qtd;
+    public double x;
+    public double y;
+    public double qtd;
 
-    public Client(int id, String name, int x, int y, int qtd) {
+    public Client(int id, String name, double x, double y, double qtd) {
         this.id = id;
         this.name = name;
         this.x = x;

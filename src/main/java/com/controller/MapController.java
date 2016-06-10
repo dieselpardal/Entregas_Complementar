@@ -14,7 +14,7 @@ import java.util.Map;
 @EnableAutoConfiguration
 public class MapController {
 
-    @RequestMapping(value = "/map", method = RequestMethod.GET)
+    @RequestMapping(value = "/d3", method = RequestMethod.GET)
     public String indicate(Map<String, Object> model) {
         List<Object> client, join;
         MapLoader map = new MapLoader();
@@ -25,15 +25,22 @@ public class MapController {
         return "indicate";
     }
 
-    @RequestMapping(value = "/map2", method = RequestMethod.GET)
+    @RequestMapping(value = "/map", method = RequestMethod.GET)
     public ModelAndView indicateView() {
         List<Object> client, join;
         MapLoader map = new MapLoader();
         client = map.mapListClient();
         join = map.mapListJoin();
-        ModelAndView modelAndView = new ModelAndView("indicate");
+        ModelAndView modelAndView = new ModelAndView("indicateMap");
         modelAndView.addObject("mapListClient", client);
         modelAndView.addObject("mapListJoin", join);
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/fighter", method = RequestMethod.GET)
+    public ModelAndView fighterView() {
+
+        ModelAndView modelAndView = new ModelAndView("fighter");
         return modelAndView;
     }
 }

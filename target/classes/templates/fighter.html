@@ -1,0 +1,46 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>FIGHTER</title>
+
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="js/markerWithLabel.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="js/service.js"></script>
+    <script src="js/Fighter.js"></script>
+    <style>
+        #quadros {
+        line-height:30px;
+        background-color:#eeeeee;
+        height:500px;
+        width:1000px;
+        float:left;
+        padding:5px;
+        }
+
+        #section {
+        width:550px;
+        float:left;
+        padding:10px;
+        }
+
+
+        .labels {
+        font-size: 10px;
+        font-weight: bold;
+        text-align: center;
+        width: 40px;
+        }
+    </style>
+</head>
+<body>
+
+
+<div id="quadros"></div>
+    <script>
+     mountMap();
+   startAction();
+
+</script>
+</div>
+</body>
+</html>
