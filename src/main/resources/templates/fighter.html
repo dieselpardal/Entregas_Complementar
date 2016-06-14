@@ -7,7 +7,7 @@
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="js/service.js"></script>
     <script src="js/Fighter.js"></script>
-    <style>
+    <style type="text/css">
         #quadros {
         line-height:30px;
         background-color:#eeeeee;
@@ -30,12 +30,49 @@
         text-align: center;
         width: 40px;
         }
+        #quadros {
+        width: 1200px;
+        background-color:black;
+        color:white;
+        clear:both;
+        text-align:center;
+        padding:5px;
+        }
+        #pontos {
+        width: 1200px;
+        background-color:black;
+        color:black;
+        clear:both;
+        text-align:center;
+        padding:5px;
+        }
+        #fire {
+        width: 12em;  height: 2em;
+        font-family:Arial;
+        font-size: 20px;
+        }
+
+        .tg  {border-collapse:collapse;border-spacing:0;border: 1px solid black;}
+        .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border: 1px solid black;}
+        .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border: 1px solid black;}
+        .tg .tg-o55w{font-size:26px;font-family:"Arial Black", Gadget, sans-serif !important;;background-color:0;color:#ffffff;vertical-align:top;border: 1px solid black;}
     </style>
 </head>
 <body>
 
 
-<div id="quadros"></div>
+<div  id="quadros"></div>
+<div  id="pontos">
+    <table class="tg" align="center" width="1000px">
+    <tr>
+        <th class="tg-o55w">TIME <a id="time">0</a> </th>
+        <th class="tg-o55w">SCORE <a id="score">0</a> </th>
+        <th class="tg-o55w">HI-SCORE <a id="hiscore">0</a></th>
+        <th class="tg-o55w">LIFE <a id="life">0</a></th>
+    </tr>
+    </table>
+    <button id="fire" onclick="fireArm()">FOGO!</button>
+</div>
     <script>
 
      startAction();
