@@ -41,6 +41,7 @@ Para converter de codigo-fonte de JAVA em JAR na Terminal:
      }
   4) ./gradlew stage 
 
+para 
 -------------------
 Feito:
         

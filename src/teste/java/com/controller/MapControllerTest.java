@@ -1,6 +1,5 @@
-package java.com.controller;
+package com.controller;
 
-import com.controller.MapController;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;

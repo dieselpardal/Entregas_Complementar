@@ -1,4 +1,4 @@
-package java.com.service;
+package main.java.com.service;
 
 import com.service.MapLoader;
 import org.json.simple.JSONObject;

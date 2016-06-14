@@ -7,9 +7,7 @@
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="js/d3.min.js"></script>
     <script src="js/service.js"></script>
-    <script src="js/serviceD3.js"></script>
     <script src="js/serviceMap.js"></script>
-    <script src="js/entregas.js"></script>
 
     <style>
 #quadros {
@@ -62,7 +60,7 @@ join.push({ id:[[${map.id}]], origin:[[${map.originIdClient}]], destiny:[[${map.
     </script>
 </div>
 <script>
-     gerarGraficoJson(client,join);
+     initMap(client, join);
 
 </script>
     </div>

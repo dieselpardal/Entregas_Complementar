@@ -1,6 +1,5 @@
-package java.com.controller;
+package com.controller;
 
-import com.controller.IndexController;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;

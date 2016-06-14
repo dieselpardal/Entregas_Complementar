@@ -43,3 +43,7 @@ task wrapper(type: Wrapper) {
 task stage {
     dependsOn build
 }
+
+task npmTest(type: Exec, dependsOn: ['npmInstall']) {
+    commandLine "npm", "test"
+}

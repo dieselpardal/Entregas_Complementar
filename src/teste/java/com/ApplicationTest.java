@@ -1,6 +1,5 @@
-package java.com;
+package com;
 
-import com.Application;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -13,6 +12,4 @@ public class ApplicationTest {
         assertThat(Application.class.desiredAssertionStatus(), is(true));
 
     }
-
-
 }
