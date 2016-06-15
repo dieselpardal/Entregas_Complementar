@@ -3,59 +3,88 @@
     <title>FIGHTER</title>
 
     <script src="https://maps.googleapis.com/maps/api/js"></script>
-    <script src="js/markerWithLabel.js"></script>
+    <script src="js/MarkerWithLabel.js"></script>
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <script src="js/service.js"></script>
+    <script src="js/Service.js"></script>
     <script src="js/Fighter.js"></script>
     <style type="text/css">
         #quadros {
-        line-height:30px;
-        background-color:#eeeeee;
-        height:500px;
-        width:1000px;
-        float:left;
-        padding:5px;
+            line-height:30px;
+            background-color:#eeeeee;
+            height:500px;
+            width:1000px;
+            float:left;
+            padding:5px;
         }
 
         #section {
-        width:550px;
-        float:left;
-        padding:10px;
+            width:550px;
+            float:left;
+            padding:10px;
         }
 
 
         .labels {
-        font-size: 10px;
-        font-weight: bold;
-        text-align: center;
-        width: 40px;
+            font-size: 10px;
+            font-weight: bold;
+            text-align: center;
+            width: 40px;
         }
         #quadros {
-        width: 1200px;
-        background-color:black;
-        color:white;
-        clear:both;
-        text-align:center;
-        padding:5px;
+            width: 1200px;
+            background-color:black;
+            color:white;
+            clear:both;
+            text-align:center;
+            padding:5px;
         }
         #pontos {
-        width: 1200px;
-        background-color:black;
-        color:black;
-        clear:both;
-        text-align:center;
-        padding:5px;
+            width: 1200px;
+            background-color:black;
+            color:black;
+            clear:both;
+            text-align:center;
+            padding:5px;
         }
         #fire {
-        width: 12em;  height: 2em;
-        font-family:Arial;
-        font-size: 20px;
+            width: 12em;  height: 2em;
+            font-family:Arial;
+            font-size: 20px;
         }
 
-        .tg  {border-collapse:collapse;border-spacing:0;border: 1px solid black;}
-        .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border: 1px solid black;}
-        .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border: 1px solid black;}
-        .tg .tg-o55w{font-size:26px;font-family:"Arial Black", Gadget, sans-serif !important;;background-color:0;color:#ffffff;vertical-align:top;border: 1px solid black;}
+        .tg  {
+            border-collapse:collapse;
+            border-spacing:0;
+            border: 1px solid black;
+        }
+        .tg td{
+            font-family:Arial, sans-serif;
+            font-size:14px;
+            padding:10px 5px;
+            border-style:solid;
+            border-width:0px;
+            overflow:hidden;
+            word-break:normal;
+            border: 1px solid black;
+        }
+        .tg th{
+            font-family:Arial, sans-serif;
+            font-size:14px;
+            font-weight:normal;
+            padding:10px 5px;
+            border-style:solid;
+            border-width:1px;
+            overflow:hidden;
+            word-break:normal;
+            border: 1px solid black;
+        }
+        .tg .tg-o55w{
+            font-size:26px;
+            font-family:"Arial Black", Gadget, sans-serif !important;
+            background-color:0;color:#ffffff;
+            vertical-align:top;
+            border: 1px solid black;
+        }
     </style>
 </head>
 <body>
@@ -71,7 +100,7 @@
         <th class="tg-o55w">LIFE <a id="life">0</a></th>
     </tr>
     </table>
-    <button id="fire" onclick="fireArm()">FOGO!</button>
+    <button id="fire" onclick="fireArm()">FIRE!</button>
 </div>
     <script>
 
