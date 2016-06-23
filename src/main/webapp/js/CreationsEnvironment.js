@@ -63,7 +63,7 @@ var environment = {
                         this.monster = new google.maps.Marker({
                                     position: {
                                             lat: localPUCRS.lat,
-                                            lng: localPUCRS.lng+this.rightMonster
+                                            lng: localPUCRS.lng+this.rightMonsterl,
                                     },
                                     map: map,
                                     title: 'Monster',

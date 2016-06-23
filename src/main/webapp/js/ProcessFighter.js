@@ -160,7 +160,4 @@ function processMain() {
     window.setInterval(function() { 
               process.times--;
     }, process.timeOneSecond);
-
-
-
 }
